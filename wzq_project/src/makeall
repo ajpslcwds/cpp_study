@@ -1,0 +1,28 @@
+#!/bin/sh +x
+
+HOME_DIR="/home/wzq/src"
+COMPLIE_DIR="component application"
+
+echo "COMPLIE start" 
+for i in $COMPLIE_DIR
+do
+	cd  $HOME_DIR
+	cd  $i
+	echo "################COMPLIE#########################"$i
+	make clean 
+	
+	make all
+	if [ $? -ne 0 ]; then
+		exit 1;
+	fi 
+	
+	make install
+	if [ $? -ne 0 ]; then
+		exit 1;
+	fi   
+	echo ' '
+done
+
+   
+echo "COMPLIE end" 
+

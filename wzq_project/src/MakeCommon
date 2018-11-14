@@ -1,0 +1,29 @@
+SRC_PATH=/home/wzq/src
+BIN_PATH=$(SRC_PATH)/bin
+INC_PATH=$(SRC_PATH)/inc
+LIB_PATH=$(SRC_PATH)/lib
+
+
+CXX=g++
+CXX_OPTIONS=-g -fPIC -Wall
+CXX_LD_OPTIONS=
+
+CCC=gcc
+CCC_OPTIONS=-g
+
+AR=ar
+AR_OPTIONS=rc 
+
+SO=g++
+SO_OPTIONS=-shared -fPIC
+
+MODE_FLAG=
+
+ALL_FLAGS= -pthread
+
+ALL_INCLUDES=-I $(INC_PATH)
+ALL_LIBS=-L $(LIB_PATH)
+
+
+
+

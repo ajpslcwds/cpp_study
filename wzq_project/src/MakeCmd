@@ -1,0 +1,62 @@
+.SUFFIXES: .cpp .c
+.cpp.o:
+	$(CXX)  $(CXX_OPTIONS) $(MODE_FLAG) -o $@ -c $< $(ALL_FLAGS) $(USR_FLAGS) $(ALL_INCLUDES) $(USR_INCLUDE)
+.c.o:
+	$(CCC)  $(CCC_OPTIONS) $(MODE_FLAG) -o $@ -c $< $(ALL_FLAGS) $(USR_FLAGS) $(ALL_INCLUDES) $(USR_INCLUDE)
+
+
+#all target
+all:$(STATIC_LIBRARY) $(SHARE_LIBRARY) $(OUTPUT)
+
+$(STATIC_LIBRARY): $(SRCS)
+	$(AR) $(AR_OPTIONS) -o $@ $(SRCS)
+
+$(SHARE_LIBRARY): $(SRCS)
+	$(SO) $(SO_OPTIONS) -o $@ $(SRCS)
+
+$(OUTPUT): $(SRCS)
+	$(CXX) $(CXX_LD_OPTIONS) -o $@ $(SRCS) $(ALL_LIBS) $(APP_LIB)
+
+install:
+	@if [ ! -d $(INC_DIR) ]; then \
+		mkdir -p $(INC_DIR); \
+		echo "mkdir -p $(INC_DIR)"; \
+	fi
+
+	@if [ "`ls -A *.h`" != "" ]; then \
+		cp -f *.h $(INC_DIR)/; \
+		echo "cp -f *.h $(INC_DIR)/"; \
+	fi
+
+	@if [ ! -d $(LIB_PATH) ]; then \
+		mkdir -p $(LIB_PATH); \
+		echo "mkdir -p $(LIB_PATH)"; \
+  	fi
+
+	@if ([ "$(STATIC_LIBRARY)" != "" ] && [ -f $(STATIC_LIBRARY) ]) ; then \
+		cp -f $(STATIC_LIBRARY)  $(LIB_PATH); \
+		echo "cp -f $(STATIC_LIBRARY)  $(LIB_PATH) "; \
+	fi
+	@if ([ "$(SHARE_LIBRARY)" != "" ] && [ -f $(SHARE_LIBRARY) ]) ; then \
+		cp -f $(SHARE_LIBRARY)  $(LIB_PATH); \
+		echo "cp -f $(SHARE_LIBRARY)  $(LIB_PATH) "; \
+	fi
+
+	@if [ ! -d $(BIN_PATH) ]; then \
+		mkdir -p $(BIN_PATH); \
+		echo "mkdir -p $(BIN_PATH)"; \
+	fi
+
+	@if ([ "$(OUTPUT)" != "" ] && [ -f $(OUTPUT) ]) ; then \
+		cp -f $(OUTPUT)  $(BIN_PATH); \
+		echo "cp -f $(OUTPUT)  $(BIN_PATH) "; \
+	fi
+
+
+#CLEAN target
+.PHONY: clean 
+clean:
+	-rm -f *.o core* *.so *.a  $(OUTPUT) *.d      
+	
+
+

@@ -1,0 +1,23 @@
+## 0 server ; 1 client
+CSFlag=1 
+
+##Ethernet interface need to up or down, eg. "lo,eth1,eht2"
+Ethernet=p6p1,p6p2
+
+ServerIp1=192.168.211.62
+ServerPort1=21001
+
+ServerIp2=192.168.212.62
+ServerPort2=21002
+
+SleepSec=10	
+RetryTimes=5
+
+
+LogLevel=14
+bLog=1
+LogWType=1
+LogDir=./logs
+LogFileLen=2000000000
+LogIndex=14
+#end

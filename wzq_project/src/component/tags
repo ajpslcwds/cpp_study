@@ -1,0 +1,18 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CLIENT_SIZE	epoll_client.cpp	23;"	d	file:
+CLIENT_SIZE	epoll_server.cpp	23;"	d	file:
+MAX_EPOLLSIZE	epoll_client.cpp	21;"	d	file:
+MAX_EPOLLSIZE	epoll_server.cpp	21;"	d	file:
+SERVER_SIZE	epoll_client.cpp	22;"	d	file:
+SERVER_SIZE	epoll_server.cpp	22;"	d	file:
+SetNonblock	epoll_client.cpp	/^static int SetNonblock(int fd) {$/;"	f	file:	signature:(int fd)
+SetNonblock	epoll_server.cpp	/^static int SetNonblock(int fd) {$/;"	f	file:	signature:(int fd)
+SetReUseAddr	epoll_client.cpp	/^static int SetReUseAddr(int fd) {$/;"	f	file:	signature:(int fd)
+SetReUseAddr	epoll_server.cpp	/^static int SetReUseAddr(int fd) {$/;"	f	file:	signature:(int fd)
+main	epoll_client.cpp	/^int main(int argc, char *argv[])$/;"	f	signature:(int argc, char *argv[])
+main	epoll_server.cpp	/^int main(int argc, char *argv[])$/;"	f	signature:(int argc, char *argv[])

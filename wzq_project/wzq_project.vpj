@@ -263,38 +263,56 @@
         <Folder
             Name="Source Files"
             Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.c++;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.scala;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl;*.d;*.m;*.mm;*.go;*.groovy;*.gsh"
-            GUID="{1A710CB1-C3DD-4C9A-678F-E4D2F250BBA3}">
+            GUID="{47DB1C66-0BE3-4EF2-E0CF-6C383CCF1D95}">
             <F N="src/application/app_shm.cpp"/>
+            <F N="src/component/epoll_client.cpp"/>
+            <F N="src/component/epoll_server.cpp"/>
             <F N="src/component/epoll_socket.cpp"/>
+            <F N="src/component/hash.cpp"/>
             <F N="src/component/readIni.cpp"/>
             <F N="src/component/shm.cpp"/>
         </Folder>
         <Folder
             Name="Header Files"
             Filters="*.h;*.H;*.hh;*.hpp;*.hxx;*.h++;*.inc;*.sh;*.cpy;*.if"
-            GUID="{BDC021D6-DD21-46A0-85E5-DE4279BCA69A}">
+            GUID="{5EAEF714-F170-41EC-F0F2-9B3F89B1D4B2}">
+            <F N="inc/common.h"/>
             <F N="src/component/common.h"/>
             <F N="src/component/epoll_socket.h"/>
+            <F N="src/component/hash.h"/>
             <F N="src/component/readIni.h"/>
+            <F N="inc/shm.h"/>
             <F N="src/component/shm.h"/>
         </Folder>
         <Folder
             Name="Resource Files"
             Filters="*.ico;*.cur;*.dlg"
-            GUID="{0D88D79C-7785-41C4-1E03-14A474EDA1B6}"/>
+            GUID="{58595D02-FFE1-4129-1303-7AF56CEE0E8B}"/>
         <Folder
             Name="Bitmaps"
             Filters="*.bmp"
-            GUID="{58482AAC-BD4D-495A-0BFF-D7C5AA880385}"/>
+            GUID="{86E6D5DE-EE8D-45CF-AA3C-A04514E3C981}"/>
         <Folder
             Name="Other Files"
             Filters=""
-            GUID="{E0AA9552-9E3F-463C-A507-8507C19830AD}">
+            GUID="{76A68FF4-0809-4DA4-019E-424223338E8A}">
+            <F N="src/component/core.4257"/>
+            <F N="src/component/core.6191"/>
+            <F N="src/component/epoll_client"/>
+            <F N="src/component/epoll_server"/>
+            <F N="src/component/epoll_socket"/>
+            <F N="src/component/hash"/>
+            <F N="lib/libComponent.so"/>
             <F N="src/makeall"/>
             <F N="src/MakeCmd"/>
             <F N="src/MakeCommon"/>
             <F N="src/application/Makefile"/>
             <F N="src/component/Makefile"/>
+            <F N="src/component/tags"/>
+            <F N="Debug/wzq_project.vpb"/>
+            <F N="wzq_project.vpj"/>
+            <F N="wzq_project.vpw"/>
+            <F N="wzq_project.vpwhist"/>
         </Folder>
     </Files>
 </Project>

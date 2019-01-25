@@ -18,9 +18,11 @@
 #include <netdb.h>
 #include <fcntl.h>
 
-#define MAX_EPOLLSIZE 2*1
+
 #define SERVER_SIZE 1
 #define CLIENT_SIZE 10
+#define MAX_EPOLLSIZE CLIENT_SIZE*2
+
 static int SetNonblock(int fd) {
 	int flags;
 
@@ -66,60 +68,54 @@ int main(int argc, char *argv[])
 	
 
 	int icnt = 0;
-	while (1)
+	for (int i = 0; i < CLIENT_SIZE; i++)
 	{
-		for (int i = 0; i < SERVER_SIZE; i++)
+		int sockfd = socket(AF_INET,SOCK_STREAM,0);
+		if (sockfd == -1)
 		{
-			if (icnt >= MAX_EPOLLSIZE / SERVER_SIZE )
-				break;
-			int sockfd = socket(AF_INET,SOCK_STREAM,0);
-			if (sockfd == -1)
-			{
-				perror("socket failed \n");
-				exit(0);
-			}
-			
-			addr.sin_port = htons(port+i);
-
-			if(connect(sockfd,(struct sockaddr*)&addr,sizeof(struct sockaddr_in)) <0 )
-			{
-				perror("connect failed\n");
-				exit(0);
-			}
-
-			sprintf(buffer,"send construction from %d",sockfd);
-			printf("send construction from %d\n",sockfd);
-			send(sockfd,buffer,sizeof(buffer),0);
-
-			SetNonblock(sockfd);
-			SetReUseAddr(sockfd);
-
-			struct epoll_event ev;
-			ev.data.fd = sockfd;
-			ev.events = EPOLLIN |EPOLLOUT;
-			epoll_ctl(epollfd,EPOLL_CTL_ADD,sockfd,&ev);
-			icnt ++;
+			perror("socket failed \n");
+			exit(0);
 		}
-	
+		
+		addr.sin_port = htons(port+i);
 
+		if(connect(sockfd,(struct sockaddr*)&addr,sizeof(struct sockaddr_in)) <0 )
+		{
+			perror("connect failed\n");
+			exit(0);
+		}
+		printf("%d connect ok!",sockfd);
+		SetNonblock(sockfd);
+		SetReUseAddr(sockfd);
+
+		struct epoll_event ev;
+		ev.data.fd = sockfd;
+		ev.events = EPOLLIN |EPOLLOUT;
+		epoll_ctl(epollfd,EPOLL_CTL_ADD,sockfd,&ev);
+		icnt ++;
+	}
+
+	while(1)
+	{
 		int nfds = epoll_wait(epollfd,events,icnt,100);
 		if(nfds <0)
 		{
 			perror("epoll_wait\n");
 			exit(0);
 		}
-
+		printf("nfds: %d\n",nfds);
 		for (int i = 0;i< nfds;i++)
 		{
 			memset(buffer,0,sizeof(buffer));
 			int clientfd = events[i].data.fd;
-
+			printf("clientfd:%d,events:0X%X\n",clientfd,events[i].events);	
+			
 			if(events[i].events & EPOLLIN)
 			{
 				int len = recv(clientfd,buffer,sizeof(buffer),0);
 				if(len >0)
 				{
-					printf("recv from %d [%s]\n",clientfd,buffer);
+					printf("recv from:%d [%s]\n",clientfd,buffer);
 				}
 				else if(len == 0)
 				{
@@ -132,19 +128,20 @@ int main(int argc, char *argv[])
 				{
 					if (errno  == EINTR) continue;
 
-					printf(" Error clientfd:%d, errno:%d\n", clientfd, errno);
+					printf(" Error clientfd:%d, errno:%d,errmsg:%s\n", clientfd, errno, strerror(errno));
 					close(clientfd);
 				}
 			}
-			else if (events[i].events & EPOLLOUT)
+			if (events[i].events & EPOLLOUT)
 			{
-				sprintf(buffer,"send from %d",clientfd);
+				sprintf(buffer,"hello ,I am client %d",clientfd);
 				send(clientfd,buffer,sizeof(buffer),0);
+				printf("send to:%d[%s]\n",clientfd,buffer);
 			}
-
-
 		}
+		
 		usleep(1000);
-
 	}
+
 }
+

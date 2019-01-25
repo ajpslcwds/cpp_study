@@ -1,4 +1,4 @@
-SRC_PATH=/home/wzq/src
+SRC_PATH=/root/src/cpp/wzq_project/src
 include  $(SRC_PATH)/MakeCommon
 
 INC_DIR=$(INC_PATH)

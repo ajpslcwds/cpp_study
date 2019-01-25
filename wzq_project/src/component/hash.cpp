@@ -74,7 +74,7 @@ int HashFunc1(void *key,int kLen,int index)
 int test_hash()
 {
     int iRet ;
-	int iHashSize = 1000*100;
+		int iHashSize = 1000*100;
     timeval tm_start,tm_end;
 
     CHash *hashtab = new CHash(iHashSize) ;

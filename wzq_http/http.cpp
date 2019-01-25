@@ -72,8 +72,14 @@ void DealRecv(int len, int cfd, char *buffer)
     printf("recvice from [%d],len:%d,buffer:\n%s\n", cfd, len, buffer);
     const char *header_html = "HTTP/1.0 200 OK\r\n" "Server: Phone-Test/1.0\r\n" "Content-Type: text/html;charset=UTF-8\r\n" "Content-Length: %d\r\n\r\n";
 
-
-    if (NULL==strstr(buffer,"msisdn"))
+	if (NULL == strstr(buffer,"GET "))
+	{
+		memset(buffer,0,sizeof(buffer));
+		strcpy(buffer, "hello .this is server!");
+        int n =  write(cfd, buffer, strlen(buffer));
+        printf("send to [%d],len:%d,buffer:%s\n", cfd, n, buffer);
+	}
+	else if (NULL==strstr(buffer,"msisdn"))
     {
         const char *default_html = "<!doctype html>\r\n" "<html>\r\n" "<head>\r\n" "<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\r\n" "<title>phone number query</title>\r\n" "</head>\r\n"
         "<body>\r\n"
@@ -98,14 +104,36 @@ void DealRecv(int len, int cfd, char *buffer)
     }
     else
     {
+        /*
         const char      result_fmt[] =                  //"<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
         "<result>\r\n"
         "msisdn,imei,imsi\r\n<br />"
         "18612345678,324567890123,6543217890\r\n<br />"
         "</result>";
+        */
+        const char result_fmt[] =
+            "<result>\r\n"
+            "<table border=\"1\">\r\n"
+            "<tr>\r\n"
+            "<th>msisdn</td>\r\n"
+            "<th>imsi</td>\r\n"
+            "<th>imei</td>\r\n"
+            "</tr>\r\n"
+            "<tr>\r\n"
+            "<td>18712345678</td>\r\n"
+            "<td>324567890123</td>\r\n"
+            "<td>6543217890</td>\r\n"
+            "</tr>\r\n"
+            "<tr>\r\n"
+            "<td>18787976558</td>\r\n"
+            "<td>666667890123</td>\r\n"
+            "<td>8655431789</td>\r\n"
+            "</tr>\r\n"
+            "</table>\r\n"
+            "</result>\r\n";
 
         memset(buffer, 0, sizeof(buffer));
-        sprintf(buffer, header_html, strlen(result_fmt));
+		sprintf(buffer, header_html, strlen(result_fmt));
         strcat(buffer, result_fmt);
         int n =  write(cfd, buffer, strlen(buffer));
         printf("send to [%d],len:%d,buffer:\n%s\n", cfd, n, buffer);
@@ -169,19 +197,19 @@ int Run()
     struct epoll_event events[CONNECT_SIZE];
     while (1)
     {
-        int nfds = epoll_wait(epollfd, events, CONNECT_SIZE, 100);
+        int nfds = epoll_wait(epollfd, events, CONNECT_SIZE, 1000);
         if (nfds < 0)
         {
             perror("epoll_wait\n");
             exit(0);
         }
-        //printf("nfds:%d\n",nfds);
+        printf("nfds:%d\n",nfds);
 
         for (int i = 0; i < nfds; i++)
         {
             memset(buffer, 0, sizeof(buffer));
             int clientfd = events[i].data.fd;
-
+			printf("fd:%d,events:0X%x\n",clientfd,events[i].events);
             if (events[i].events & EPOLLIN)
             {
                 if (clientfd == sockfd)
@@ -199,7 +227,7 @@ int Run()
 
                     printf("######%d get NO[%d] client[%d],from %s:%d\n", sockfd, icnt, new_clientfd, inet_ntoa(addr.sin_addr), ntohs(addr.sin_port));
 
-                    //DealNewConnect(new_clientfd);
+					// DealNewConnect(new_clientfd);
 
                     struct epoll_event ev;
                     ev.data.fd = new_clientfd;
@@ -217,10 +245,10 @@ int Run()
                     }
                     else if (len == 0)
                     {
-                        printf("disconnect %d\n", clientfd);
-                        icnt--;
-                        epoll_ctl(epollfd, EPOLL_CTL_DEL, clientfd, NULL);
-                        close(clientfd);
+                        //printf("disconnect %d\n", clientfd);
+                        //icnt--;
+                        //epoll_ctl(epollfd, EPOLL_CTL_DEL, clientfd, NULL);
+                        //close(clientfd);
                     }
                     else
                     {

@@ -1,0 +1,16 @@
+git add *
+git commit -m "add hashmap"
+git status 
+git status  -S
+git status  -s
+history |grep git
+git remote add origin https://github.com/ajpslcwds/cpp_study.git
+git push -u origin master
+git add .
+git status -s
+git commit -m "add http"
+history |grep git
+git push -u origin master
+mkdir git_temp
+cd git_temp/
+git clone https://github.com/aarond10/epoll_thread

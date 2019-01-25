@@ -1,4 +1,4 @@
-SRC_PATH=/home/wzq/src
+SRC_PATH=/root/src/cpp/wzq_project/src
 BIN_PATH=$(SRC_PATH)/bin
 INC_PATH=$(SRC_PATH)/inc
 LIB_PATH=$(SRC_PATH)/lib

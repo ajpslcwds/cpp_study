@@ -21,9 +21,10 @@
  
 using namespace std;
 
-#define MAX_EPOLLSIZE 256*1
-#define SERVER_SIZE 1
-#define CLIENT_SIZE 10
+
+#define SERVER_SIZE 10
+#define MAX_EPOLLSIZE 256 * SERVER_SIZE
+
 static int SetNonblock(int fd) {
 	int flags;
 
@@ -105,41 +106,46 @@ int main(int argc, char *argv[])
 	int icnt = 0;
 	while (1)
 	{
-		int nfds = epoll_wait(epollfd,events,SERVER_SIZE,100);
+		int nfds = epoll_wait(epollfd,events,MAX_EPOLLSIZE,100);
 		if(nfds <0)
 		{
 			perror("epoll_wait\n");
 			exit(0);
 		}
-
+		printf("nfds: %d\n",nfds);
 		for (int i = 0;i< nfds;i++)
 		{
 			memset(buffer,0,sizeof(buffer));
 			int clientfd = events[i].data.fd;
-
-			if (server_sockfd.find(clientfd)!=server_sockfd.end())
+			printf("clientfd:%d,events:0X%x\n",clientfd,events[i].events);	
+			
+			if(events[i].events & EPOLLIN)
 			{
-				int new_clientfd ;						
-				struct sockaddr_in addr;
-				memset(&addr,0x0,sizeof(struct sockaddr_in));
-				socklen_t socklen = sizeof(struct sockaddr_in);
-
-				if((new_clientfd = accept(clientfd,(struct sockaddr*)&addr,&socklen))<0)
+				//deal server for new client
+				if (server_sockfd.find(clientfd)!=server_sockfd.end())
 				{
-					perror("accept failed\n");
+					int new_clientfd ;						
+					struct sockaddr_in addr;
+					memset(&addr,0x0,sizeof(struct sockaddr_in));
+					socklen_t socklen = sizeof(struct sockaddr_in);
+
+					if((new_clientfd = accept(clientfd,(struct sockaddr*)&addr,&socklen))<0)
+					{
+						perror("accept failed\n");
+						continue;
+					}
+					
+					printf("%d get [%d] new client[%d],from %s:%d\n",clientfd,icnt,new_clientfd,inet_ntoa(addr.sin_addr),ntohs(addr.sin_port));
+					send(new_clientfd,"connected",10,0);
+					struct epoll_event ev;
+					ev.data.fd = new_clientfd;
+					ev.events = EPOLLIN |EPOLLOUT;
+					epoll_ctl(epollfd,EPOLL_CTL_ADD,new_clientfd,&ev);
+					icnt ++;
 					continue;
 				}
-				
-				printf("%d get [%d] new client[%d],from %s:%d\n",clientfd,icnt,new_clientfd,inet_ntoa(addr.sin_addr),ntohs(addr.sin_port));
-				send(new_clientfd,"connected",10,0);
-				struct epoll_event ev;
-				ev.data.fd = new_clientfd;
-				ev.events = EPOLLIN |EPOLLOUT;
-				epoll_ctl(epollfd,EPOLL_CTL_ADD,new_clientfd,&ev);
-				icnt ++;
-			}
-			else if(events[i].events & EPOLLIN)
-			{
+
+				//deal client for msg
 				int len = recv(clientfd,buffer,sizeof(buffer),0);
 				if(len >0)
 				{
@@ -156,14 +162,15 @@ int main(int argc, char *argv[])
 				{
 					if (errno  == EINTR) continue;
 
-					printf(" Error clientfd:%d, errno:%d\n", clientfd, errno);
+					printf(" Error clientfd:%d, errno:%d,errmsg:%s\n", clientfd, errno, strerror(errno));
 					close(clientfd);
 				}
 			}
-			else if (events[i].events & EPOLLOUT)
+			if (events[i].events & EPOLLOUT)
 			{
-				sprintf(buffer,"send from %d",clientfd);
+				sprintf(buffer,"hello ,I am server %d",clientfd);
 				send(clientfd,buffer,sizeof(buffer),0);
+				printf("send to:%d[%s]\n",clientfd,buffer);
 			}
 		}
 

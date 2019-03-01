@@ -168,8 +168,10 @@ int EpollSocket::RunAsClient()
         MyPrintfErr("connect failed,%s!\n", strerror(errno));
         return RS_COMMON;
     }
-
-    SetReUseAddr(m_ServerSockId);
+	MyPrintfInf("%d connecting to %s:%d\n",m_ServerSockId , inet_ntoa(addr.sin_addr), ntohs(addr.sin_port));
+    
+	
+	SetReUseAddr(m_ServerSockId);
     SetNonblock(m_ServerSockId);
     struct epoll_event ev;
     ev.data.fd = m_ServerSockId;
@@ -184,14 +186,6 @@ int EpollSocket::RunAsClient()
             MyPrintfErr("EpollWait failed,iRet = %d!\n", iRet);
             return iRet;
         }
-
-        for (int i = 0; i < 3; i++)
-        {
-            char buffer[BUFFER_TMP_SIZE] = { };
-            memset(buffer, 0, sizeof(buffer));
-            sprintf(buffer, "send to %d", m_ServerSockId);
-            send(m_ServerSockId, buffer, sizeof(buffer), 0);
-        }
     }
 
     return iRet;
@@ -205,7 +199,7 @@ int EpollSocket::EpollWait()
     struct epoll_event events[EVENT_MAX_SIZE];
     do
     {
-        int iFds = epoll_wait(m_EpollFd, events, EVENT_MAX_SIZE, 100);
+        int iFds = epoll_wait(m_EpollFd, events, EVENT_MAX_SIZE, 1000);
         if (iFds < 0)
         {
             MyPrintfErr("epoll_wait failed,%s!\n", strerror(errno));
@@ -220,7 +214,7 @@ int EpollSocket::EpollWait()
             for (int i = 0; i < iFds; i++)
             {
                 int sockfd = events[i].data.fd;
-
+				MyPrintfInf("NO:%d,sockfd:%d,events:%x\n",i,sockfd,events[i].events);
                 if (m_ProcType == PROC_SERVER && sockfd == m_ServerSockId)
                 {
                     int new_clientfd;
@@ -244,35 +238,40 @@ int EpollSocket::EpollWait()
                     epoll_ctl(m_EpollFd, EPOLL_CTL_ADD, new_clientfd, &ev);
                     iCnt++;
                 }
-                else if (events[i].events & EPOLLIN)
-                {
-                    memset(buffer, 0, sizeof(buffer));
-                    int len = recv(sockfd, buffer, sizeof(buffer), 0);
-                    if (len > 0)
-                    {
-                        MyPrintfInf("recv from %d [%s]\n", sockfd, buffer);
-                    }
-                    else if (len == 0)
-                    {
-                        MyPrintfInf("disconnect %d\n", sockfd);
-                        iCnt--;
-                        epoll_ctl(m_EpollFd, EPOLL_CTL_DEL, sockfd, NULL);
-                        close(sockfd);
-                    }
-                    else
-                    {
-                        if (errno  == EINTR) continue;
+				else
+				{
+					if (events[i].events & EPOLLIN)
+					{
+						memset(buffer, 0, sizeof(buffer));
+						int len = recv(sockfd, buffer, sizeof(buffer), 0);
+						if (len > 0)
+						{
+							MyPrintfInf("recv from %d [%s]\n", sockfd, buffer);
+						}
+						else if (len == 0)
+						{
+							MyPrintfInf("disconnect %d\n", sockfd);
+							iCnt--;
+							epoll_ctl(m_EpollFd, EPOLL_CTL_DEL, sockfd, NULL);
+							close(sockfd);
+						}
+						else
+						{
+							if (errno  == EINTR) continue;
 
-                        MyPrintfInf(" Error sockfd:%d, errno:%d,msg:\n", sockfd, errno, strerror(errno));
-                        close(sockfd);
-                    }
-                }
-                else if (events[i].events & EPOLLOUT)
-                {
-                    memset(buffer, 0, sizeof(buffer));
-                    sprintf(buffer, "send to %d", sockfd);
-                    send(sockfd, buffer, sizeof(buffer), 0);
-                }
+							MyPrintfInf(" Error sockfd:%d, errno:%d,msg:\n", sockfd, errno, strerror(errno));
+							close(sockfd);
+						}
+					}
+					if (events[i].events & EPOLLOUT)
+					{
+						static int iMsgNO = 0;
+						memset(buffer, 0, sizeof(buffer));
+						sprintf(buffer, "hello ,I am %d_%d", m_ServerSockId,iMsgNO++ );
+						MyPrintfInf("send to %d [%s]\n", sockfd, buffer);
+						send(sockfd, buffer, sizeof(buffer), 0);
+					}
+				}
             }
         }
     }while (0);

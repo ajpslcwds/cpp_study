@@ -1,0 +1,382 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+APP_LIB	Makefile	/^APP_LIB=-L$(LIB_PATH)$/;"	m
+BUFFER_MAX_SIZE	common.h	29;"	d
+BUFFER_TMP_SIZE	common.h	30;"	d
+BuildIndex	hash.h	/^    int BuildIndex(int iIndex, int iKeyLen, int iValLen, HashFunc hashFunc);$/;"	p	class:CHash	access:public	signature:(int iIndex, int iKeyLen, int iValLen, HashFunc hashFunc)
+BuildIndex	hash.h	/^int CHash::BuildIndex(int iIndex, int iKeyLen, int iValLen, HashFunc hashFunc)$/;"	f	class:CHash	signature:(int iIndex, int iKeyLen, int iValLen, HashFunc hashFunc)
+CHash	hash.h	/^    CHash(unsigned int iHashSize);$/;"	p	class:CHash	access:public	signature:(unsigned int iHashSize)
+CHash	hash.h	/^CHash::CHash(unsigned int iHashSize) :$/;"	f	class:CHash	signature:(unsigned int iHashSize)
+CHash	hash.h	/^class CHash$/;"	c
+CHash::BuildIndex	hash.h	/^    int BuildIndex(int iIndex, int iKeyLen, int iValLen, HashFunc hashFunc);$/;"	p	class:CHash	access:public	signature:(int iIndex, int iKeyLen, int iValLen, HashFunc hashFunc)
+CHash::BuildIndex	hash.h	/^int CHash::BuildIndex(int iIndex, int iKeyLen, int iValLen, HashFunc hashFunc)$/;"	f	class:CHash	signature:(int iIndex, int iKeyLen, int iValLen, HashFunc hashFunc)
+CHash::CHash	hash.h	/^    CHash(unsigned int iHashSize);$/;"	p	class:CHash	access:public	signature:(unsigned int iHashSize)
+CHash::CHash	hash.h	/^CHash::CHash(unsigned int iHashSize) :$/;"	f	class:CHash	signature:(unsigned int iHashSize)
+CHash::Find	hash.h	/^    int Find(int iIndex, void  *key, void **val);$/;"	p	class:CHash	access:public	signature:(int iIndex, void *key, void **val)
+CHash::Find	hash.h	/^int CHash::Find(int iIndex, void  *key, void **val)$/;"	f	class:CHash	signature:(int iIndex, void *key, void **val)
+CHash::Insert	hash.h	/^    int Insert(int iIndex, void  *key, void *val);$/;"	p	class:CHash	access:public	signature:(int iIndex, void *key, void *val)
+CHash::Insert	hash.h	/^int CHash::Insert(int iIndex, void  *key, void *val)$/;"	f	class:CHash	signature:(int iIndex, void *key, void *val)
+CHash::Next	hash.h	/^    int Next(void **val);$/;"	p	class:CHash	access:public	signature:(void **val)
+CHash::Next	hash.h	/^int CHash::Next(void **val)$/;"	f	class:CHash	signature:(void **val)
+CHash::Scan	hash.h	/^    int Scan();$/;"	p	class:CHash	access:public	signature:()
+CHash::Scan	hash.h	/^int CHash::Scan()$/;"	f	class:CHash	signature:()
+CHash::m_HashIndex	hash.h	/^    CIndex  **m_HashIndex;$/;"	m	class:CHash	access:private
+CHash::m_HashSize	hash.h	/^    int     m_HashSize;$/;"	m	class:CHash	access:private
+CHash::m_IndexCount	hash.h	/^    int     m_IndexCount;$/;"	m	class:CHash	access:private
+CHash::m_iSearchIndex	hash.h	/^    int     m_iSearchIndex;$/;"	m	class:CHash	access:private
+CHash::~CHash	hash.h	/^    ~CHash();$/;"	p	class:CHash	access:public	signature:()
+CHash::~CHash	hash.h	/^CHash::~CHash()$/;"	f	class:CHash	signature:()
+CIndex	hash.h	/^    CIndex(int iSize, int iKeyLen, int iValLen, HashFunc hashFunc);$/;"	p	class:CIndex	access:public	signature:(int iSize, int iKeyLen, int iValLen, HashFunc hashFunc)
+CIndex	hash.h	/^CIndex::CIndex(int iSize, int iKeyLen, int iValLen, HashFunc hashFunc) :$/;"	f	class:CIndex	signature:(int iSize, int iKeyLen, int iValLen, HashFunc hashFunc)
+CIndex	hash.h	/^class CIndex$/;"	c
+CIndex::CIndex	hash.h	/^    CIndex(int iSize, int iKeyLen, int iValLen, HashFunc hashFunc);$/;"	p	class:CIndex	access:public	signature:(int iSize, int iKeyLen, int iValLen, HashFunc hashFunc)
+CIndex::CIndex	hash.h	/^CIndex::CIndex(int iSize, int iKeyLen, int iValLen, HashFunc hashFunc) :$/;"	f	class:CIndex	signature:(int iSize, int iKeyLen, int iValLen, HashFunc hashFunc)
+CIndex::Find	hash.h	/^    int Find(void *key, void **val);$/;"	p	class:CIndex	access:public	signature:(void *key, void **val)
+CIndex::Find	hash.h	/^int CIndex::Find(void *key, void **val)$/;"	f	class:CIndex	signature:(void *key, void **val)
+CIndex::Insert	hash.h	/^    int Insert(void *key, void *val);$/;"	p	class:CIndex	access:public	signature:(void *key, void *val)
+CIndex::Insert	hash.h	/^int CIndex::Insert(void *key, void *val)$/;"	f	class:CIndex	signature:(void *key, void *val)
+CIndex::Next	hash.h	/^    int Next(void **val);$/;"	p	class:CIndex	access:public	signature:(void **val)
+CIndex::Next	hash.h	/^int CIndex::Next(void **val)$/;"	f	class:CIndex	signature:(void **val)
+CIndex::Scan	hash.h	/^    int Scan();$/;"	p	class:CIndex	access:public	signature:()
+CIndex::Scan	hash.h	/^int CIndex::Scan()$/;"	f	class:CIndex	signature:()
+CIndex::m_Count	hash.h	/^    int		m_Count;  \/\/count of item$/;"	m	class:CIndex	access:public
+CIndex::m_HashFunc	hash.h	/^    HashFunc    m_HashFunc;$/;"	m	class:CIndex	access:public
+CIndex::m_SearchHashVal	hash.h	/^    int     m_SearchHashVal;$/;"	m	class:CIndex	access:public
+CIndex::m_Size	hash.h	/^    int     m_Size;  \/\/vector size$/;"	m	class:CIndex	access:public
+CIndex::m_ValLen	hash.h	/^    int		m_ValLen;$/;"	m	class:CIndex	access:public
+CIndex::m_VecMap	hash.h	/^    TVecMap     m_VecMap;$/;"	m	class:CIndex	access:public
+CIndex::m_begin_iter	hash.h	/^    TMap::iterator  m_begin_iter;$/;"	m	class:CIndex	access:public
+CIndex::m_end_iter	hash.h	/^    TMap::iterator  m_end_iter;$/;"	m	class:CIndex	access:public
+CIndex::m_keyLen	hash.h	/^    int		m_keyLen;$/;"	m	class:CIndex	access:public
+CIndex::~CIndex	hash.h	/^    ~CIndex();$/;"	p	class:CIndex	access:public	signature:()
+CIndex::~CIndex	hash.h	/^CIndex::~CIndex()$/;"	f	class:CIndex	signature:()
+CLIENT_SIZE	epoll_client.cpp	23;"	d	file:
+EVENT_MAX_SIZE	epoll_socket.h	6;"	d
+EpollSocket	epoll_socket.cpp	/^EpollSocket::EpollSocket()$/;"	f	class:EpollSocket	signature:()
+EpollSocket	epoll_socket.h	/^    EpollSocket();$/;"	p	class:EpollSocket	access:public	signature:()
+EpollSocket	epoll_socket.h	/^class EpollSocket$/;"	c
+EpollSocket::EpollSocket	epoll_socket.cpp	/^EpollSocket::EpollSocket()$/;"	f	class:EpollSocket	signature:()
+EpollSocket::EpollSocket	epoll_socket.h	/^    EpollSocket();$/;"	p	class:EpollSocket	access:public	signature:()
+EpollSocket::EpollWait	epoll_socket.cpp	/^int EpollSocket::EpollWait()$/;"	f	class:EpollSocket	signature:()
+EpollSocket::EpollWait	epoll_socket.h	/^    int EpollWait();$/;"	p	class:EpollSocket	access:public	signature:()
+EpollSocket::Execute	epoll_socket.cpp	/^int EpollSocket::Execute()$/;"	f	class:EpollSocket	signature:()
+EpollSocket::Execute	epoll_socket.h	/^    int Execute();$/;"	p	class:EpollSocket	access:public	signature:()
+EpollSocket::Init	epoll_socket.cpp	/^int EpollSocket::Init(char *Ip, int Port, int ProcType, int EpollEventSize)$/;"	f	class:EpollSocket	signature:(char *Ip, int Port, int ProcType, int EpollEventSize)
+EpollSocket::Init	epoll_socket.h	/^    int Init(char *Ip, int Port, int ProcType, int EpollEventSize = EVENT_MAX_SIZE);$/;"	p	class:EpollSocket	access:public	signature:(char *Ip, int Port, int ProcType, int EpollEventSize = EVENT_MAX_SIZE)
+EpollSocket::Read	epoll_socket.cpp	/^int EpollSocket::Read(char *szBuffer, int iLen)$/;"	f	class:EpollSocket	signature:(char *szBuffer, int iLen)
+EpollSocket::Read	epoll_socket.h	/^    int Read(char *szBuffer, int iLen);$/;"	p	class:EpollSocket	access:public	signature:(char *szBuffer, int iLen)
+EpollSocket::RunAsClient	epoll_socket.cpp	/^int EpollSocket::RunAsClient()$/;"	f	class:EpollSocket	signature:()
+EpollSocket::RunAsClient	epoll_socket.h	/^    int RunAsClient();$/;"	p	class:EpollSocket	access:public	signature:()
+EpollSocket::RunAsServer	epoll_socket.cpp	/^int EpollSocket::RunAsServer()$/;"	f	class:EpollSocket	signature:()
+EpollSocket::RunAsServer	epoll_socket.h	/^    int RunAsServer();$/;"	p	class:EpollSocket	access:public	signature:()
+EpollSocket::SetNonblock	epoll_socket.cpp	/^int EpollSocket::SetNonblock(int fd)$/;"	f	class:EpollSocket	signature:(int fd)
+EpollSocket::SetNonblock	epoll_socket.h	/^    int SetNonblock(int fd);$/;"	p	class:EpollSocket	access:public	signature:(int fd)
+EpollSocket::SetReUseAddr	epoll_socket.cpp	/^int EpollSocket::SetReUseAddr(int fd)$/;"	f	class:EpollSocket	signature:(int fd)
+EpollSocket::SetReUseAddr	epoll_socket.h	/^    int SetReUseAddr(int fd);$/;"	p	class:EpollSocket	access:public	signature:(int fd)
+EpollSocket::Write	epoll_socket.cpp	/^int EpollSocket::Write(char *szBuffer, int iLen)$/;"	f	class:EpollSocket	signature:(char *szBuffer, int iLen)
+EpollSocket::Write	epoll_socket.h	/^    int Write(char *szBuffer, int iLen);$/;"	p	class:EpollSocket	access:public	signature:(char *szBuffer, int iLen)
+EpollSocket::m_ClientSockId	epoll_socket.h	/^    int     m_ClientSockId;$/;"	m	class:EpollSocket	access:private
+EpollSocket::m_EpollFd	epoll_socket.h	/^    int     m_EpollFd;$/;"	m	class:EpollSocket	access:private
+EpollSocket::m_Ip	epoll_socket.h	/^    char    m_Ip[40];$/;"	m	class:EpollSocket	access:private
+EpollSocket::m_Port	epoll_socket.h	/^    int     m_Port;$/;"	m	class:EpollSocket	access:private
+EpollSocket::m_ProcType	epoll_socket.h	/^    int     m_ProcType;$/;"	m	class:EpollSocket	access:private
+EpollSocket::m_ServerSockId	epoll_socket.h	/^    int     m_ServerSockId;$/;"	m	class:EpollSocket	access:private
+EpollSocket::~EpollSocket	epoll_socket.cpp	/^EpollSocket::~EpollSocket()$/;"	f	class:EpollSocket	signature:()
+EpollSocket::~EpollSocket	epoll_socket.h	/^    ~EpollSocket();$/;"	p	class:EpollSocket	access:public	signature:()
+EpollWait	epoll_socket.cpp	/^int EpollSocket::EpollWait()$/;"	f	class:EpollSocket	signature:()
+EpollWait	epoll_socket.h	/^    int EpollWait();$/;"	p	class:EpollSocket	access:public	signature:()
+Execute	epoll_socket.cpp	/^int EpollSocket::Execute()$/;"	f	class:EpollSocket	signature:()
+Execute	epoll_socket.h	/^    int Execute();$/;"	p	class:EpollSocket	access:public	signature:()
+Find	hash.h	/^    int Find(int iIndex, void  *key, void **val);$/;"	p	class:CHash	access:public	signature:(int iIndex, void *key, void **val)
+Find	hash.h	/^    int Find(void *key, void **val);$/;"	p	class:CIndex	access:public	signature:(void *key, void **val)
+Find	hash.h	/^int CHash::Find(int iIndex, void  *key, void **val)$/;"	f	class:CHash	signature:(int iIndex, void *key, void **val)
+Find	hash.h	/^int CIndex::Find(void *key, void **val)$/;"	f	class:CIndex	signature:(void *key, void **val)
+GetCurTime	common.h	/^inline char* GetCurTime(time_t tTime = time(NULL))$/;"	f	signature:(time_t tTime = time(NULL))
+HASH_INDEX_HAS_EXISTED	hash.h	/^    HASH_INDEX_HAS_EXISTED,$/;"	e	enum:HashResCode
+HASH_INDEX_NOT_EXIST	hash.h	/^    HASH_INDEX_NOT_EXIST,$/;"	e	enum:HashResCode
+HASH_MEMEORY_ALLOC_FAILED	hash.h	/^    HASH_MEMEORY_ALLOC_FAILED,$/;"	e	enum:HashResCode
+HASH_SUCCESS	hash.h	/^    HASH_SUCCESS   = 0,$/;"	e	enum:HashResCode
+HashFunc	hash.h	/^typedef int (*HashFunc)(void *key, int kLen, int index);$/;"	t
+HashFunc1	hash.cpp	/^int HashFunc1(void *key,int kLen,int index)$/;"	f	signature:(void *key,int kLen,int index)
+HashResCode	hash.h	/^enum HashResCode$/;"	g
+INC_DIR	Makefile	/^INC_DIR=$(INC_PATH)$/;"	m
+IPC_MODE	common.h	32;"	d
+Init	epoll_socket.cpp	/^int EpollSocket::Init(char *Ip, int Port, int ProcType, int EpollEventSize)$/;"	f	class:EpollSocket	signature:(char *Ip, int Port, int ProcType, int EpollEventSize)
+Init	epoll_socket.h	/^    int Init(char *Ip, int Port, int ProcType, int EpollEventSize = EVENT_MAX_SIZE);$/;"	p	class:EpollSocket	access:public	signature:(char *Ip, int Port, int ProcType, int EpollEventSize = EVENT_MAX_SIZE)
+Init	hash.h	/^    int Init(int iSize)$/;"	f	class:TVecChar	access:public	signature:(int iSize)
+Insert	hash.h	/^    int Insert(int iIndex, void  *key, void *val);$/;"	p	class:CHash	access:public	signature:(int iIndex, void *key, void *val)
+Insert	hash.h	/^    int Insert(void *key, void *val);$/;"	p	class:CIndex	access:public	signature:(void *key, void *val)
+Insert	hash.h	/^int CHash::Insert(int iIndex, void  *key, void *val)$/;"	f	class:CHash	signature:(int iIndex, void *key, void *val)
+Insert	hash.h	/^int CIndex::Insert(void *key, void *val)$/;"	f	class:CIndex	signature:(void *key, void *val)
+MAP_SECTION	readIni.h	/^typedef map<TSectionName,string> MAP_SECTION;$/;"	t
+MAX_EPOLLSIZE	epoll_client.cpp	24;"	d	file:
+MAX_EPOLLSIZE	epoll_server.cpp	26;"	d	file:
+MyPrintfErr	common.h	40;"	d
+MyPrintfInf	common.h	36;"	d
+Next	hash.h	/^    int Next(void **val);$/;"	p	class:CHash	access:public	signature:(void **val)
+Next	hash.h	/^    int Next(void **val);$/;"	p	class:CIndex	access:public	signature:(void **val)
+Next	hash.h	/^int CHash::Next(void **val)$/;"	f	class:CHash	signature:(void **val)
+Next	hash.h	/^int CIndex::Next(void **val)$/;"	f	class:CIndex	signature:(void **val)
+OUTPUT	Makefile	/^OUTPUT = $/;"	m
+PROCESS_TYPE	epoll_socket.h	/^enum PROCESS_TYPE$/;"	g
+PROC_CLIENT	epoll_socket.h	/^    PROC_CLIENT$/;"	e	enum:PROCESS_TYPE
+PROC_SERVER	epoll_socket.h	/^    PROC_SERVER,$/;"	e	enum:PROCESS_TYPE
+RS_ALLOC	common.h	/^	RS_ALLOC ,$/;"	e	enum:ResultCode
+RS_COMMON	common.h	/^	RS_COMMON ,$/;"	e	enum:ResultCode
+RS_NO_SHM	common.h	/^	RS_NO_SHM,$/;"	e	enum:ResultCode
+RS_SUCCESS	common.h	/^	RS_SUCCESS = 0,$/;"	e	enum:ResultCode
+Read	epoll_socket.cpp	/^int EpollSocket::Read(char *szBuffer, int iLen)$/;"	f	class:EpollSocket	signature:(char *szBuffer, int iLen)
+Read	epoll_socket.h	/^    int Read(char *szBuffer, int iLen);$/;"	p	class:EpollSocket	access:public	signature:(char *szBuffer, int iLen)
+ResultCode	common.h	/^enum ResultCode$/;"	g
+RunAsClient	epoll_socket.cpp	/^int EpollSocket::RunAsClient()$/;"	f	class:EpollSocket	signature:()
+RunAsClient	epoll_socket.h	/^    int RunAsClient();$/;"	p	class:EpollSocket	access:public	signature:()
+RunAsServer	epoll_socket.cpp	/^int EpollSocket::RunAsServer()$/;"	f	class:EpollSocket	signature:()
+RunAsServer	epoll_socket.h	/^    int RunAsServer();$/;"	p	class:EpollSocket	access:public	signature:()
+SERVER_SIZE	epoll_client.cpp	22;"	d	file:
+SERVER_SIZE	epoll_server.cpp	25;"	d	file:
+SHARE_LIBRARY	Makefile	/^SHARE_LIBRARY = libComponent.so$/;"	m
+SHM_CONTROL	shm.h	/^struct SHM_CONTROL$/;"	s
+SHM_CONTROL::display	shm.h	/^	void display()$/;"	f	struct:SHM_CONTROL	access:public	signature:()
+SHM_CONTROL::endPos	shm.h	/^	int  endPos;$/;"	m	struct:SHM_CONTROL	access:public
+SHM_CONTROL::iDir	shm.h	/^	int  iDir;$/;"	m	struct:SHM_CONTROL	access:public
+SHM_CONTROL::iInitFlag	shm.h	/^	int  iInitFlag;$/;"	m	struct:SHM_CONTROL	access:public
+SHM_CONTROL::readPos	shm.h	/^	int  readPos;$/;"	m	struct:SHM_CONTROL	access:public
+SHM_CONTROL::startPos	shm.h	/^	int  startPos;$/;"	m	struct:SHM_CONTROL	access:public
+SHM_CONTROL::writePos	shm.h	/^	int  writePos;$/;"	m	struct:SHM_CONTROL	access:public
+SHM_DATA_HEAD	shm.h	/^struct SHM_DATA_HEAD$/;"	s
+SHM_DATA_HEAD::iFlag	shm.h	/^	int iFlag;$/;"	m	struct:SHM_DATA_HEAD	access:public
+SHM_DATA_HEAD::iSize	shm.h	/^	int iSize;$/;"	m	struct:SHM_DATA_HEAD	access:public
+SRCS	Makefile	/^SRCS=shm.o readIni.o$/;"	m
+SRC_PATH	Makefile	/^SRC_PATH=\/root\/src\/cpp\/wzq_project\/src$/;"	m
+STATIC_LIBRARY	Makefile	/^STATIC_LIBRARY = $/;"	m
+Scan	hash.h	/^    int Scan();$/;"	p	class:CHash	access:public	signature:()
+Scan	hash.h	/^    int Scan();$/;"	p	class:CIndex	access:public	signature:()
+Scan	hash.h	/^int CHash::Scan()$/;"	f	class:CHash	signature:()
+Scan	hash.h	/^int CIndex::Scan()$/;"	f	class:CIndex	signature:()
+SetNonblock	epoll_client.cpp	/^static int SetNonblock(int fd) {$/;"	f	file:	signature:(int fd)
+SetNonblock	epoll_server.cpp	/^static int SetNonblock(int fd) {$/;"	f	file:	signature:(int fd)
+SetNonblock	epoll_socket.cpp	/^int EpollSocket::SetNonblock(int fd)$/;"	f	class:EpollSocket	signature:(int fd)
+SetNonblock	epoll_socket.h	/^    int SetNonblock(int fd);$/;"	p	class:EpollSocket	access:public	signature:(int fd)
+SetReUseAddr	epoll_client.cpp	/^static int SetReUseAddr(int fd) {$/;"	f	file:	signature:(int fd)
+SetReUseAddr	epoll_server.cpp	/^static int SetReUseAddr(int fd) {$/;"	f	file:	signature:(int fd)
+SetReUseAddr	epoll_socket.cpp	/^int EpollSocket::SetReUseAddr(int fd)$/;"	f	class:EpollSocket	signature:(int fd)
+SetReUseAddr	epoll_socket.h	/^    int SetReUseAddr(int fd);$/;"	p	class:EpollSocket	access:public	signature:(int fd)
+ShareMemory	shm.cpp	/^ShareMemory::ShareMemory():$/;"	f	class:ShareMemory	signature:()
+ShareMemory	shm.h	/^	ShareMemory();$/;"	p	class:ShareMemory	access:public	signature:()
+ShareMemory	shm.h	/^class ShareMemory$/;"	c
+ShareMemory::ShareMemory	shm.cpp	/^ShareMemory::ShareMemory():$/;"	f	class:ShareMemory	signature:()
+ShareMemory::ShareMemory	shm.h	/^	ShareMemory();$/;"	p	class:ShareMemory	access:public	signature:()
+ShareMemory::init	shm.cpp	/^int ShareMemory::init(int iKey, int iSize)$/;"	f	class:ShareMemory	signature:(int iKey, int iSize)
+ShareMemory::init	shm.h	/^	int init(int iKey, int iSize);$/;"	p	class:ShareMemory	access:public	signature:(int iKey, int iSize)
+ShareMemory::judegeRead	shm.cpp	/^bool ShareMemory::judegeRead()$/;"	f	class:ShareMemory	signature:()
+ShareMemory::judegeRead	shm.h	/^	bool judegeRead();$/;"	p	class:ShareMemory	access:private	signature:()
+ShareMemory::judegeWrite	shm.cpp	/^bool ShareMemory::judegeWrite(SHM_DATA_HEAD *head)$/;"	f	class:ShareMemory	signature:(SHM_DATA_HEAD *head)
+ShareMemory::judegeWrite	shm.h	/^	bool judegeWrite(SHM_DATA_HEAD *head);$/;"	p	class:ShareMemory	access:private	signature:(SHM_DATA_HEAD *head)
+ShareMemory::m_addr	shm.h	/^	char *m_addr;$/;"	m	class:ShareMemory	access:private
+ShareMemory::m_shm	shm.h	/^	Shm *m_shm;$/;"	m	class:ShareMemory	access:private
+ShareMemory::m_shmCtrl	shm.h	/^	SHM_CONTROL *m_shmCtrl;$/;"	m	class:ShareMemory	access:private
+ShareMemory::readData	shm.cpp	/^int ShareMemory::readData(SHM_DATA_HEAD *head,void *content)$/;"	f	class:ShareMemory	signature:(SHM_DATA_HEAD *head,void *content)
+ShareMemory::readData	shm.h	/^	int readData(SHM_DATA_HEAD *head,void *content);$/;"	p	class:ShareMemory	access:public	signature:(SHM_DATA_HEAD *head,void *content)
+ShareMemory::writeData	shm.cpp	/^int ShareMemory::writeData(SHM_DATA_HEAD *head,void *content)$/;"	f	class:ShareMemory	signature:(SHM_DATA_HEAD *head,void *content)
+ShareMemory::writeData	shm.h	/^	int writeData(SHM_DATA_HEAD *head,void *content);$/;"	p	class:ShareMemory	access:public	signature:(SHM_DATA_HEAD *head,void *content)
+ShareMemory::~ShareMemory	shm.cpp	/^ShareMemory::~ShareMemory()$/;"	f	class:ShareMemory	signature:()
+ShareMemory::~ShareMemory	shm.h	/^	virtual ~ShareMemory();$/;"	p	class:ShareMemory	access:public	signature:()
+Shm	shm.cpp	/^Shm::Shm()$/;"	f	class:Shm	signature:()
+Shm	shm.h	/^	Shm();$/;"	p	class:Shm	access:public	signature:()
+Shm	shm.h	/^class Shm$/;"	c
+Shm::Shm	shm.cpp	/^Shm::Shm()$/;"	f	class:Shm	signature:()
+Shm::Shm	shm.h	/^	Shm();$/;"	p	class:Shm	access:public	signature:()
+Shm::delShm	shm.cpp	/^int Shm::delShm()$/;"	f	class:Shm	signature:()
+Shm::delShm	shm.h	/^	int delShm();$/;"	p	class:Shm	access:public	signature:()
+Shm::detach	shm.cpp	/^int Shm::detach(char *addr)$/;"	f	class:Shm	signature:(char *addr)
+Shm::detach	shm.h	/^	int detach(char *addr);$/;"	p	class:Shm	access:public	signature:(char *addr)
+Shm::getAddr	shm.cpp	/^char* Shm::getAddr()$/;"	f	class:Shm	signature:()
+Shm::getAddr	shm.h	/^	char* getAddr();$/;"	p	class:Shm	access:public	signature:()
+Shm::getShm	shm.cpp	/^char* Shm::getShm(int iFlag)$/;"	f	class:Shm	signature:(int iFlag)
+Shm::getShm	shm.h	/^	char* getShm(int iFlag);$/;"	p	class:Shm	access:public	signature:(int iFlag)
+Shm::getShmId	shm.cpp	/^int Shm::getShmId(int iFlag)$/;"	f	class:Shm	signature:(int iFlag)
+Shm::getShmId	shm.h	/^	int getShmId(int iFlag);$/;"	p	class:Shm	access:public	signature:(int iFlag)
+Shm::iShmId	shm.h	/^	int iShmId;$/;"	m	class:Shm	access:private
+Shm::iShmKey	shm.h	/^	int iShmKey;$/;"	m	class:Shm	access:private
+Shm::iShmSize	shm.h	/^	int iShmSize;$/;"	m	class:Shm	access:private
+Shm::init	shm.cpp	/^int Shm::init(int iKey, int iSize)$/;"	f	class:Shm	signature:(int iKey, int iSize)
+Shm::init	shm.h	/^	int init(int iKey, int iSize);$/;"	p	class:Shm	access:public	signature:(int iKey, int iSize)
+Shm::~Shm	shm.cpp	/^Shm::~Shm()$/;"	f	class:Shm	signature:()
+Shm::~Shm	shm.h	/^	virtual ~Shm();$/;"	p	class:Shm	access:public	signature:()
+TMap	hash.h	/^typedef map<TVecChar *, void *, TVecCharCmp>  TMap;$/;"	t
+TPerson	hash.cpp	/^    TPerson()$/;"	f	struct:TPerson	access:public	signature:()
+TPerson	hash.cpp	/^struct TPerson$/;"	s	file:
+TPerson::TPerson	hash.cpp	/^    TPerson()$/;"	f	struct:TPerson	access:public	signature:()
+TPerson::addr	hash.cpp	/^	char addr[32];$/;"	m	struct:TPerson	file:	access:public
+TPerson::id	hash.cpp	/^	int id;$/;"	m	struct:TPerson	file:	access:public
+TPerson::name	hash.cpp	/^	char name[32];$/;"	m	struct:TPerson	file:	access:public
+TPerson::salary	hash.cpp	/^	double salary;$/;"	m	struct:TPerson	file:	access:public
+TPersonKey	hash.cpp	/^    TPersonKey( )$/;"	f	struct:TPersonKey	access:public	signature:( )
+TPersonKey	hash.cpp	/^struct TPersonKey$/;"	s	file:
+TPersonKey::TPersonKey	hash.cpp	/^    TPersonKey( )$/;"	f	struct:TPersonKey	access:public	signature:( )
+TPersonKey::name	hash.cpp	/^    char name[32];$/;"	m	struct:TPersonKey	file:	access:public
+TPersonKey::operator =	hash.cpp	/^    void operator =(TPerson &p)$/;"	f	struct:TPersonKey	access:public	signature:(TPerson &p)
+TReadIni	readIni.cpp	/^TReadIni::TReadIni()$/;"	f	class:TReadIni	signature:()
+TReadIni	readIni.cpp	/^TReadIni::TReadIni(char *filename)$/;"	f	class:TReadIni	signature:(char *filename)
+TReadIni	readIni.h	/^	TReadIni();$/;"	p	class:TReadIni	access:public	signature:()
+TReadIni	readIni.h	/^	TReadIni(char *fileName);$/;"	p	class:TReadIni	access:public	signature:(char *fileName)
+TReadIni	readIni.h	/^class TReadIni$/;"	c
+TReadIni::TReadIni	readIni.cpp	/^TReadIni::TReadIni()$/;"	f	class:TReadIni	signature:()
+TReadIni::TReadIni	readIni.cpp	/^TReadIni::TReadIni(char *filename)$/;"	f	class:TReadIni	signature:(char *filename)
+TReadIni::TReadIni	readIni.h	/^	TReadIni();$/;"	p	class:TReadIni	access:public	signature:()
+TReadIni::TReadIni	readIni.h	/^	TReadIni(char *fileName);$/;"	p	class:TReadIni	access:public	signature:(char *fileName)
+TReadIni::display	readIni.cpp	/^void TReadIni::display()$/;"	f	class:TReadIni	signature:()
+TReadIni::display	readIni.h	/^	void display();$/;"	p	class:TReadIni	access:public	signature:()
+TReadIni::iInitFlag	readIni.h	/^	int iInitFlag;$/;"	m	class:TReadIni	access:private
+TReadIni::init	readIni.cpp	/^int TReadIni::init()$/;"	f	class:TReadIni	signature:()
+TReadIni::init	readIni.h	/^	int init();$/;"	p	class:TReadIni	access:private	signature:()
+TReadIni::mapData	readIni.h	/^	MAP_SECTION  mapData;	$/;"	m	class:TReadIni	access:private
+TReadIni::putData	readIni.cpp	/^int TReadIni::putData(char *section, char *name, char *value)$/;"	f	class:TReadIni	signature:(char *section, char *name, char *value)
+TReadIni::putData	readIni.h	/^	int putData(char *section, char *name, char* value);$/;"	p	class:TReadIni	access:private	signature:(char *section, char *name, char* value)
+TReadIni::readConfigFile	readIni.cpp	/^int TReadIni::readConfigFile()$/;"	f	class:TReadIni	signature:()
+TReadIni::readConfigFile	readIni.h	/^	int readConfigFile();$/;"	p	class:TReadIni	access:private	signature:()
+TReadIni::readDouble	readIni.cpp	/^int TReadIni::readDouble(char *section, char *name, double& value)$/;"	f	class:TReadIni	signature:(char *section, char *name, double& value)
+TReadIni::readDouble	readIni.h	/^	int readDouble(char *section,char *name ,double  &value);$/;"	p	class:TReadIni	access:public	signature:(char *section,char *name ,double &value)
+TReadIni::readInt	readIni.cpp	/^int TReadIni::readInt(char *section, char *name, int& value)$/;"	f	class:TReadIni	signature:(char *section, char *name, int& value)
+TReadIni::readInt	readIni.h	/^	int readInt(char *section,char *name ,int &value);$/;"	p	class:TReadIni	access:public	signature:(char *section,char *name ,int &value)
+TReadIni::readString	readIni.cpp	/^int TReadIni::readString(char *section, char *name, string& value)$/;"	f	class:TReadIni	signature:(char *section, char *name, string& value)
+TReadIni::readString	readIni.h	/^	int readString(char *section,char *name ,string &value);$/;"	p	class:TReadIni	access:public	signature:(char *section,char *name ,string &value)
+TReadIni::sFileName	readIni.h	/^	char sFileName[128];$/;"	m	class:TReadIni	access:private
+TReadIni::~TReadIni	readIni.cpp	/^TReadIni::~TReadIni()$/;"	f	class:TReadIni	signature:()
+TReadIni::~TReadIni	readIni.h	/^	~TReadIni();$/;"	p	class:TReadIni	access:public	signature:()
+TSectionName	readIni.h	/^	TSectionName()$/;"	f	struct:TSectionName	access:public	signature:()
+TSectionName	readIni.h	/^struct TSectionName$/;"	s
+TSectionName::TSectionName	readIni.h	/^	TSectionName()$/;"	f	struct:TSectionName	access:public	signature:()
+TSectionName::name	readIni.h	/^	string name;$/;"	m	struct:TSectionName	access:public
+TSectionName::operator <	readIni.h	/^	bool operator <(const TSectionName &data) const$/;"	f	struct:TSectionName	access:public	signature:(const TSectionName &data) const
+TSectionName::section	readIni.h	/^	string section;$/;"	m	struct:TSectionName	access:public
+TVecChar	hash.h	/^    TVecChar() : m_size(0), m_data(NULL) { }$/;"	f	class:TVecChar	access:public	signature:()
+TVecChar	hash.h	/^class TVecChar$/;"	c
+TVecChar::Init	hash.h	/^    int Init(int iSize)$/;"	f	class:TVecChar	access:public	signature:(int iSize)
+TVecChar::TVecChar	hash.h	/^    TVecChar() : m_size(0), m_data(NULL) { }$/;"	f	class:TVecChar	access:public	signature:()
+TVecChar::m_data	hash.h	/^    char *m_data;$/;"	m	class:TVecChar	access:public
+TVecChar::m_size	hash.h	/^    int m_size;$/;"	m	class:TVecChar	access:public
+TVecChar::operator =	hash.h	/^    TVecChar& operator=(void *data)$/;"	f	class:TVecChar	access:public	signature:(void *data)
+TVecChar::~TVecChar	hash.h	/^    ~TVecChar()$/;"	f	class:TVecChar	access:public	signature:()
+TVecCharCmp	hash.h	/^class TVecCharCmp$/;"	c
+TVecCharCmp::operator ()	hash.h	/^    bool operator ()(const TVecChar *vecChar1, const TVecChar *vecChar2)$/;"	f	class:TVecCharCmp	access:public	signature:(const TVecChar *vecChar1, const TVecChar *vecChar2)
+TVecMap	hash.h	/^typedef vector<TMap *>  TVecMap;$/;"	t
+USR_FLAGS	Makefile	/^USR_FLAGS=-D_DEBUG_$/;"	m
+USR_INCLUDE	Makefile	/^USR_INCLUDE= -I.$/;"	m
+Write	epoll_socket.cpp	/^int EpollSocket::Write(char *szBuffer, int iLen)$/;"	f	class:EpollSocket	signature:(char *szBuffer, int iLen)
+Write	epoll_socket.h	/^    int Write(char *szBuffer, int iLen);$/;"	p	class:EpollSocket	access:public	signature:(char *szBuffer, int iLen)
+_COMMON_H_	common.h	2;"	d
+_EPOLL_SOCKET_H_	epoll_socket.h	2;"	d
+_READINI_H	readIni.h	7;"	d
+_SHM_H_	shm.h	2;"	d
+__HASH_H__	hash.h	8;"	d
+addr	hash.cpp	/^	char addr[32];$/;"	m	struct:TPerson	file:	access:public
+delShm	shm.cpp	/^int Shm::delShm()$/;"	f	class:Shm	signature:()
+delShm	shm.h	/^	int delShm();$/;"	p	class:Shm	access:public	signature:()
+detach	shm.cpp	/^int Shm::detach(char *addr)$/;"	f	class:Shm	signature:(char *addr)
+detach	shm.h	/^	int detach(char *addr);$/;"	p	class:Shm	access:public	signature:(char *addr)
+display	readIni.cpp	/^void TReadIni::display()$/;"	f	class:TReadIni	signature:()
+display	readIni.h	/^	void display();$/;"	p	class:TReadIni	access:public	signature:()
+display	shm.h	/^	void display()$/;"	f	struct:SHM_CONTROL	access:public	signature:()
+endPos	shm.h	/^	int  endPos;$/;"	m	struct:SHM_CONTROL	access:public
+getAddr	shm.cpp	/^char* Shm::getAddr()$/;"	f	class:Shm	signature:()
+getAddr	shm.h	/^	char* getAddr();$/;"	p	class:Shm	access:public	signature:()
+getRandStr	hash.cpp	/^char *getRandStr(int len)$/;"	f	signature:(int len)
+getShm	shm.cpp	/^char* Shm::getShm(int iFlag)$/;"	f	class:Shm	signature:(int iFlag)
+getShm	shm.h	/^	char* getShm(int iFlag);$/;"	p	class:Shm	access:public	signature:(int iFlag)
+getShmId	shm.cpp	/^int Shm::getShmId(int iFlag)$/;"	f	class:Shm	signature:(int iFlag)
+getShmId	shm.h	/^	int getShmId(int iFlag);$/;"	p	class:Shm	access:public	signature:(int iFlag)
+i	hash.cpp	/^int i  = 10000000;$/;"	v
+iDir	shm.h	/^	int  iDir;$/;"	m	struct:SHM_CONTROL	access:public
+iFlag	shm.h	/^	int iFlag;$/;"	m	struct:SHM_DATA_HEAD	access:public
+iInitFlag	readIni.h	/^	int iInitFlag;$/;"	m	class:TReadIni	access:private
+iInitFlag	shm.h	/^	int  iInitFlag;$/;"	m	struct:SHM_CONTROL	access:public
+iShmId	shm.h	/^	int iShmId;$/;"	m	class:Shm	access:private
+iShmKey	shm.h	/^	int iShmKey;$/;"	m	class:Shm	access:private
+iShmSize	shm.h	/^	int iShmSize;$/;"	m	class:Shm	access:private
+iSize	shm.h	/^	int iSize;$/;"	m	struct:SHM_DATA_HEAD	access:public
+id	hash.cpp	/^	int id;$/;"	m	struct:TPerson	file:	access:public
+init	readIni.cpp	/^int TReadIni::init()$/;"	f	class:TReadIni	signature:()
+init	readIni.h	/^	int init();$/;"	p	class:TReadIni	access:private	signature:()
+init	shm.cpp	/^int ShareMemory::init(int iKey, int iSize)$/;"	f	class:ShareMemory	signature:(int iKey, int iSize)
+init	shm.cpp	/^int Shm::init(int iKey, int iSize)$/;"	f	class:Shm	signature:(int iKey, int iSize)
+init	shm.h	/^	int init(int iKey, int iSize);$/;"	p	class:ShareMemory	access:public	signature:(int iKey, int iSize)
+init	shm.h	/^	int init(int iKey, int iSize);$/;"	p	class:Shm	access:public	signature:(int iKey, int iSize)
+judegeRead	shm.cpp	/^bool ShareMemory::judegeRead()$/;"	f	class:ShareMemory	signature:()
+judegeRead	shm.h	/^	bool judegeRead();$/;"	p	class:ShareMemory	access:private	signature:()
+judegeWrite	shm.cpp	/^bool ShareMemory::judegeWrite(SHM_DATA_HEAD *head)$/;"	f	class:ShareMemory	signature:(SHM_DATA_HEAD *head)
+judegeWrite	shm.h	/^	bool judegeWrite(SHM_DATA_HEAD *head);$/;"	p	class:ShareMemory	access:private	signature:(SHM_DATA_HEAD *head)
+m_ClientSockId	epoll_socket.h	/^    int     m_ClientSockId;$/;"	m	class:EpollSocket	access:private
+m_Count	hash.h	/^    int		m_Count;  \/\/count of item$/;"	m	class:CIndex	access:public
+m_EpollFd	epoll_socket.h	/^    int     m_EpollFd;$/;"	m	class:EpollSocket	access:private
+m_HashFunc	hash.h	/^    HashFunc    m_HashFunc;$/;"	m	class:CIndex	access:public
+m_HashIndex	hash.h	/^    CIndex  **m_HashIndex;$/;"	m	class:CHash	access:private
+m_HashSize	hash.h	/^    int     m_HashSize;$/;"	m	class:CHash	access:private
+m_IndexCount	hash.h	/^    int     m_IndexCount;$/;"	m	class:CHash	access:private
+m_Ip	epoll_socket.h	/^    char    m_Ip[40];$/;"	m	class:EpollSocket	access:private
+m_Port	epoll_socket.h	/^    int     m_Port;$/;"	m	class:EpollSocket	access:private
+m_ProcType	epoll_socket.h	/^    int     m_ProcType;$/;"	m	class:EpollSocket	access:private
+m_SearchHashVal	hash.h	/^    int     m_SearchHashVal;$/;"	m	class:CIndex	access:public
+m_ServerSockId	epoll_socket.h	/^    int     m_ServerSockId;$/;"	m	class:EpollSocket	access:private
+m_Size	hash.h	/^    int     m_Size;  \/\/vector size$/;"	m	class:CIndex	access:public
+m_ValLen	hash.h	/^    int		m_ValLen;$/;"	m	class:CIndex	access:public
+m_VecMap	hash.h	/^    TVecMap     m_VecMap;$/;"	m	class:CIndex	access:public
+m_addr	shm.h	/^	char *m_addr;$/;"	m	class:ShareMemory	access:private
+m_begin_iter	hash.h	/^    TMap::iterator  m_begin_iter;$/;"	m	class:CIndex	access:public
+m_data	hash.h	/^    char *m_data;$/;"	m	class:TVecChar	access:public
+m_end_iter	hash.h	/^    TMap::iterator  m_end_iter;$/;"	m	class:CIndex	access:public
+m_iSearchIndex	hash.h	/^    int     m_iSearchIndex;$/;"	m	class:CHash	access:private
+m_keyLen	hash.h	/^    int		m_keyLen;$/;"	m	class:CIndex	access:public
+m_shm	shm.h	/^	Shm *m_shm;$/;"	m	class:ShareMemory	access:private
+m_shmCtrl	shm.h	/^	SHM_CONTROL *m_shmCtrl;$/;"	m	class:ShareMemory	access:private
+m_size	hash.h	/^    int m_size;$/;"	m	class:TVecChar	access:public
+main	epoll_client.cpp	/^int main(int argc, char *argv[])$/;"	f	signature:(int argc, char *argv[])
+main	epoll_server.cpp	/^int main(int argc, char *argv[])$/;"	f	signature:(int argc, char *argv[])
+main	epoll_socket.cpp	/^int main(int argc, char *argv[])$/;"	f	signature:(int argc, char *argv[])
+main	hash.cpp	/^int main()$/;"	f	signature:()
+mapData	readIni.h	/^	MAP_SECTION  mapData;	$/;"	m	class:TReadIni	access:private
+name	hash.cpp	/^	char name[32];$/;"	m	struct:TPerson	file:	access:public
+name	hash.cpp	/^    char name[32];$/;"	m	struct:TPersonKey	file:	access:public
+name	readIni.h	/^	string name;$/;"	m	struct:TSectionName	access:public
+operator ()	hash.h	/^    bool operator ()(const TVecChar *vecChar1, const TVecChar *vecChar2)$/;"	f	class:TVecCharCmp	access:public	signature:(const TVecChar *vecChar1, const TVecChar *vecChar2)
+operator <	readIni.h	/^	bool operator <(const TSectionName &data) const$/;"	f	struct:TSectionName	access:public	signature:(const TSectionName &data) const
+operator =	hash.cpp	/^    void operator =(TPerson &p)$/;"	f	struct:TPersonKey	access:public	signature:(TPerson &p)
+operator =	hash.h	/^    TVecChar& operator=(void *data)$/;"	f	class:TVecChar	access:public	signature:(void *data)
+putData	readIni.cpp	/^int TReadIni::putData(char *section, char *name, char *value)$/;"	f	class:TReadIni	signature:(char *section, char *name, char *value)
+putData	readIni.h	/^	int putData(char *section, char *name, char* value);$/;"	p	class:TReadIni	access:private	signature:(char *section, char *name, char* value)
+readConfigFile	readIni.cpp	/^int TReadIni::readConfigFile()$/;"	f	class:TReadIni	signature:()
+readConfigFile	readIni.h	/^	int readConfigFile();$/;"	p	class:TReadIni	access:private	signature:()
+readData	shm.cpp	/^int ShareMemory::readData(SHM_DATA_HEAD *head,void *content)$/;"	f	class:ShareMemory	signature:(SHM_DATA_HEAD *head,void *content)
+readData	shm.h	/^	int readData(SHM_DATA_HEAD *head,void *content);$/;"	p	class:ShareMemory	access:public	signature:(SHM_DATA_HEAD *head,void *content)
+readDouble	readIni.cpp	/^int TReadIni::readDouble(char *section, char *name, double& value)$/;"	f	class:TReadIni	signature:(char *section, char *name, double& value)
+readDouble	readIni.h	/^	int readDouble(char *section,char *name ,double  &value);$/;"	p	class:TReadIni	access:public	signature:(char *section,char *name ,double &value)
+readInt	readIni.cpp	/^int TReadIni::readInt(char *section, char *name, int& value)$/;"	f	class:TReadIni	signature:(char *section, char *name, int& value)
+readInt	readIni.h	/^	int readInt(char *section,char *name ,int &value);$/;"	p	class:TReadIni	access:public	signature:(char *section,char *name ,int &value)
+readPos	shm.h	/^	int  readPos;$/;"	m	struct:SHM_CONTROL	access:public
+readString	readIni.cpp	/^int TReadIni::readString(char *section, char *name, string& value)$/;"	f	class:TReadIni	signature:(char *section, char *name, string& value)
+readString	readIni.h	/^	int readString(char *section,char *name ,string &value);$/;"	p	class:TReadIni	access:public	signature:(char *section,char *name ,string &value)
+sFileName	readIni.h	/^	char sFileName[128];$/;"	m	class:TReadIni	access:private
+salary	hash.cpp	/^	double salary;$/;"	m	struct:TPerson	file:	access:public
+section	readIni.h	/^	string section;$/;"	m	struct:TSectionName	access:public
+startPos	shm.h	/^	int  startPos;$/;"	m	struct:SHM_CONTROL	access:public
+test_hash	hash.cpp	/^int test_hash()$/;"	f	signature:()
+writeData	shm.cpp	/^int ShareMemory::writeData(SHM_DATA_HEAD *head,void *content)$/;"	f	class:ShareMemory	signature:(SHM_DATA_HEAD *head,void *content)
+writeData	shm.h	/^	int writeData(SHM_DATA_HEAD *head,void *content);$/;"	p	class:ShareMemory	access:public	signature:(SHM_DATA_HEAD *head,void *content)
+writePos	shm.h	/^	int  writePos;$/;"	m	struct:SHM_CONTROL	access:public
+~CHash	hash.h	/^    ~CHash();$/;"	p	class:CHash	access:public	signature:()
+~CHash	hash.h	/^CHash::~CHash()$/;"	f	class:CHash	signature:()
+~CIndex	hash.h	/^    ~CIndex();$/;"	p	class:CIndex	access:public	signature:()
+~CIndex	hash.h	/^CIndex::~CIndex()$/;"	f	class:CIndex	signature:()
+~EpollSocket	epoll_socket.cpp	/^EpollSocket::~EpollSocket()$/;"	f	class:EpollSocket	signature:()
+~EpollSocket	epoll_socket.h	/^    ~EpollSocket();$/;"	p	class:EpollSocket	access:public	signature:()
+~ShareMemory	shm.cpp	/^ShareMemory::~ShareMemory()$/;"	f	class:ShareMemory	signature:()
+~ShareMemory	shm.h	/^	virtual ~ShareMemory();$/;"	p	class:ShareMemory	access:public	signature:()
+~Shm	shm.cpp	/^Shm::~Shm()$/;"	f	class:Shm	signature:()
+~Shm	shm.h	/^	virtual ~Shm();$/;"	p	class:Shm	access:public	signature:()
+~TReadIni	readIni.cpp	/^TReadIni::~TReadIni()$/;"	f	class:TReadIni	signature:()
+~TReadIni	readIni.h	/^	~TReadIni();$/;"	p	class:TReadIni	access:public	signature:()
+~TVecChar	hash.h	/^    ~TVecChar()$/;"	f	class:TVecChar	access:public	signature:()
